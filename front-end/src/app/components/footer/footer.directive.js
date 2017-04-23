@@ -1,13 +1,13 @@
-export function NavbarDirective() {
+export function FooterDirective() {
   'ngInject';
 
   let directive = {
     restrict: 'E',
-    templateUrl: 'app/components/navbar/navbar.html',
+    templateUrl: 'app/components/footer/footer.html',
     scope: {
-
+        
     },
-    controller: NavbarController,
+    controller: FooterController,
     controllerAs: 'vm',
     bindToController: true
   };
@@ -15,7 +15,7 @@ export function NavbarDirective() {
   return directive;
 }
 
-class NavbarController {
+class FooterController {
   constructor () {
     'ngInject';
       

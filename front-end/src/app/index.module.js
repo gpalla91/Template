@@ -1,9 +1,9 @@
-
 import { config } from './index.config';
 import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
+import { FooterDirective } from '../app/components/footer/footer.directive';
 
 angular.module('frontEnd', ['ui.router', 'ui.bootstrap', 'toastr'])
   .config(config)
@@ -11,3 +11,4 @@ angular.module('frontEnd', ['ui.router', 'ui.bootstrap', 'toastr'])
   .run(runBlock)
   .controller('MainController', MainController)
   .directive('acmeNavbar', NavbarDirective)
+  .directive('acmeFooter', FooterDirective)
