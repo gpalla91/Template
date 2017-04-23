@@ -1,0 +1,18 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "Mean Stack NODEJS backend.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mean",
+    "node",
+    "angular",
+    "monogo",
+    "express"
+  ],
+  "author": "Geni Palla",
+  "license": "ISC"
+}
