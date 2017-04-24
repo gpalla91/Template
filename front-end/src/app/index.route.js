@@ -18,6 +18,18 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
         templateUrl: 'app/Contact/contact.html',
         controller: 'ContactController',
         controllerAs: 'contact'
+    })
+    .state('login', {
+        url: '/login',
+        templateUrl: 'app/Login/login.html',
+        controller: 'LoginController',
+        controllerAs: 'login'
+    })
+    .state('register', {
+        url: '/register',
+        templateUrl: 'app/Register/register.html',
+        controller: 'RegisterController',
+        controllerAs: 'register'
     });
 
   $urlRouterProvider.otherwise('/');
