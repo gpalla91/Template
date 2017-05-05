@@ -5,31 +5,31 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: 'app/main/main.html',
       controller: 'MainController',
-      controllerAs: 'main'
+      controllerAs: 'vm'
     })
     .state('about', {
         url: '/about',
         templateUrl: 'app/About/about.html',
         controller: 'AboutController',
-        controllerAs: 'about'
+        controllerAs: 'vm'
     })
     .state('contact', {
         url: '/contact',
         templateUrl: 'app/Contact/contact.html',
         controller: 'ContactController',
-        controllerAs: 'contact'
+        controllerAs: 'vm'
     })
     .state('login', {
         url: '/login',
         templateUrl: 'app/Login/login.html',
         controller: 'LoginController',
-        controllerAs: 'login'
+        controllerAs: 'vm'
     })
     .state('register', {
         url: '/register',
         templateUrl: 'app/Register/register.html',
         controller: 'RegisterController',
-        controllerAs: 'register'
+        controllerAs: 'vm'
     });
 
   $urlRouterProvider.otherwise('/');
