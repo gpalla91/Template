@@ -10,7 +10,8 @@ import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { FooterDirective } from '../app/components/footer/footer.directive';
 
 
-angular.module('frontEnd', ['ui.router', 'ui.bootstrap', 'toastr'])
+angular.module('frontEnd', ['ui.router', 'ui.bootstrap', 'toastr', 'satellizer'])
+  .constant('API_URL', 'http://localhost:5000/')
   .config(config)
   .config(routerConfig)
   .run(runBlock)
