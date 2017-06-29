@@ -19,7 +19,7 @@
             <div class="panel-heading">Messages</div>
             <div class="panel-body">
               <ul class="list-group">
-                <li class="list-group-item" ng-repeat="message in vm.messages">{{message.msg}}</li>
+                <li class="list-group-item" ng-repeat="message in vm.messages">{{message.msg}} - {{message.user.email}}</li>
               </ul>
             </div>
           </div>

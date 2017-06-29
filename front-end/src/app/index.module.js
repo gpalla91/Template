@@ -6,6 +6,7 @@ import { AboutController } from './About/about.controller';
 import { ContactController } from './Contact/contact.controller';
 import { LoginController } from './Login/login.controller';
 import { RegisterController } from './Register/register.controller';
+import { NavBarController } from '../app/components/navbar/navbar.controller';
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { FooterDirective } from '../app/components/footer/footer.directive';
 
@@ -19,6 +20,7 @@ angular.module('frontEnd', ['ui.router', 'ui.bootstrap', 'toastr', 'satellizer']
   .controller('AboutController', AboutController)
   .controller('ContactController', ContactController)
   .controller('LoginController', LoginController)
+  .controller('NavBarController', NavBarController)
   .controller('RegisterController', RegisterController)
   .directive('acmeNavbar', NavbarDirective)
   .directive('acmeFooter', FooterDirective)

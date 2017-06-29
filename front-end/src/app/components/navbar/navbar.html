@@ -1,26 +1,11 @@
-<!--<nav class="navbar navbar-static-top navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
-        <span class="glyphicon glyphicon-home"></span> Gulp Angular Template
-      </a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-      <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#">Home</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>-->
-
-<ul class="nav nav-tabs">
+<ul ng-controller="NavBarController as nav" class="nav nav-tabs">
     <!--Left Align-->
     <li role="presentation" id="home"><a ui-sref="home">Home</a></li>
     <li role="presentation" id="about"><a ui-sref="about">About</a></li>
     <li role="presentation" id="contact"><a ui-sref="contact">Contact</a></li>
-    
+
     <!--Right Align-->
-    <li role="presentation" id="login" class="pull-right"><a ui-sref="login">Login</a></li>
-    <li role="presentation" id="register" class="pull-right"><a ui-sref="register">Register</a></li>
+    <li ng-hide="nav.isAuthenticated()" role="presentation" id="login" class="pull-right"><a ui-sref="login">Login</a></li>
+    <li ng-show="nav.isAuthenticated()" role="presentation" id="logout" ng-click="nav.logout()" class="pull-right"><a ui-sref="">Logout</a></li>
+    <li ng-hide="nav.isAuthenticated()" role="presentation" id="register" class="pull-right"><a ui-sref="register">Register</a></li>
 </ul>

@@ -17,7 +17,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "crypto": "0.0.3",
     "express": "^4.15.3",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.18.1",
     "mongodb": "^2.2.29",
     "mongoose": "^4.10.7"
   }

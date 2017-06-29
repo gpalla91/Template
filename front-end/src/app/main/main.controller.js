@@ -8,14 +8,13 @@ export class MainController {
       var vm = this;
       $http.get('http://localhost:5000/api/message').then(function(result){
         vm.messages = result.data;
-        $log.log('messages loaded');
       });
     }
 
     vm.postMessage = function() {
       $http.post('http://localhost:5000/api/message', {msg: vm.message}).then(function(result){
-        $log.log('message posted', result);
         vm.message = '';
+        $log.log(result);
         vm.getMessages();
       });
     }

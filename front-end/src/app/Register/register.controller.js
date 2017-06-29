@@ -1,5 +1,5 @@
 export class RegisterController {
-  constructor ($log, $auth) {
+  constructor ($log, $auth, $state) {
     'ngInject';
 
       var vm = this;
@@ -11,13 +11,10 @@ export class RegisterController {
             password : vm.user.password,
             firstName : vm.user.firstName,
             lastName : vm.user.lastName
-          }).then(function(result){
+          }).then(function(token){
+            $auth.setToken(token);
             vm.dataLoading = false;
-            vm.user.username = '';
-            vm.user.password = '';
-            vm.user.password2 = '';
-            vm.user.firstName = '';
-            vm.user.lastName = '';
+            $state.go('home');
           }).catch(function(err){
             $log.log(err);
           });

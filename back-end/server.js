@@ -1,24 +1,26 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
 var app = express();
 var Message = require('./controllers/Message');
 var Auth = require('./controllers/Auth');
+var checkAuthenticated = require('./services/checkAuthenticated');
+var cors = require('./services/CORS');
+
+//Middleware
 app.use(bodyParser.json());
+app.use(cors);
 
-app.use(function(req, res, next){
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  next();
-});
-
-app.post('/api/message', Message.postMessage);
+//Requests
+app.post('/api/message', checkAuthenticated, Message.postMessage);
 
 app.post('/auth/register', Auth.register);
 
+app.post('/auth/login', Auth.login);
+
 app.get('/api/message', Message.getMessages);
 
+//Connection
 mongoose.connect("mongodb://localhost:27017/test", function(err, db){
   if(!err){
     console.log("we are connected to mongo");
