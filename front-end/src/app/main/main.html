@@ -1,11 +1,14 @@
 <div class="container">
 
-    <div class="row">
+    <div style="padding-top: 5%;" class="row">
         <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-heading">Post A Message</div>
             <div class="panel-body">
-              <div class="input-group">
+              <div ng-hide="vm.isAuthenticated()" class="alert alert-info">
+                <strong>Please login to post messages!</strong>
+              </div>
+              <div ng-if="vm.isAuthenticated()" class="input-group">
                 <textarea class="form-control custom-control" rows=3 style="resize:none" ng-model="vm.message"></textarea>
                 <span class="input-group-addon btn btn-primary" ng-click="vm.postMessage()"> Post </span>
               </div>
@@ -18,11 +21,12 @@
           <div class="panel panel-default">
             <div class="panel-heading">Messages</div>
             <div class="panel-body">
-              <ul class="list-group">
+              <ul style="max-height: 300px; overflow-y: auto;" class="list-group">
                 <li class="list-group-item" ng-repeat="message in vm.messages">{{message.msg}} - {{message.user.email}}</li>
               </ul>
             </div>
           </div>
       </div>
     </div>
+    {{vm.messages}}
 </div>

@@ -30,7 +30,7 @@ module.exports = {
   login: function(req, res){
     User.findOne({email: req.body.email}, function(err, user){
       if(!user){
-        return res.status(401).send({message:'Email or Password invalid'});
+        return res.status(401).send({message:'Email could not be found please register'});
       }
 
       if(crypto.createHash('md5').update(req.body.password).digest("hex") == user.password){
@@ -39,7 +39,7 @@ module.exports = {
         });
       } else {
         return res.status(401).send({
-          message: 'Invalid email and/or password'
+          message: 'Invalid email/password combination please try again!'
         });
       }
     });

@@ -3,6 +3,9 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <h2 style="text-align: center;">Login</h2>
+            <div ng-show="vm.showError" class="alert alert-danger">
+              <strong>{{vm.errorMessage}}</strong>
+            </div>
             <form name="form" ng-submit="vm.login()" role="form">
                 <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required, 'has-error': form.username.$dirty && form.username.$error.email }">
                     <label for="username">Email</label>

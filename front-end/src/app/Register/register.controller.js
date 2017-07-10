@@ -4,6 +4,9 @@ export class RegisterController {
 
       var vm = this;
 
+      vm.errorMessage = '';
+      vm.showError = false;
+
       vm.register = function() {
           vm.dataLoading = true;
           $auth.signup({
@@ -14,9 +17,12 @@ export class RegisterController {
           }).then(function(token){
             $auth.setToken(token);
             vm.dataLoading = false;
+            vm.showError = false;
             $state.go('home');
           }).catch(function(err){
-            $log.log(err);
+            vm.errorMessage = err.data.message;
+            vm.dataLoading = false;
+            vm.showError = true;
           });
       }
   }
